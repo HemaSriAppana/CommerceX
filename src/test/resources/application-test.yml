@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:commercx;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop
+
+jwt:
+  secret: test-only-secret-key-for-jwt-signing-123456789
+  expiration: 3600
+  access-expiration: 900000
+  refresh-expiration: 604800000
+
+payment:
+  stripe:
+    api-key: test-stripe-key
+    timeout: 5000
