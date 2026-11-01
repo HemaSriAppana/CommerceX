@@ -1,0 +1,57 @@
+#spring:
+#  application:
+#    name: CommerceX
+#
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/commerceX
+#    username: root
+#    password: root123
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#jwt:
+#  secret: commerce-secret-bigger-secret-key
+#  expiration: 3600
+#  access-expiration: 900000
+#  refresh-expiration: 604800000
+#
+#payment:
+#  stripe:
+#    api-key: xyz123
+#    timeout: 5000
+#logging:
+#  pattern:
+#    console: "%d %-5level [%X{correlationId}] %logger - %msg%n"
+  
+spring:
+  application:
+    name: CommerceX
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/commerceX}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 3600
+  access-expiration: 900000
+  refresh-expiration: 604800000
+
+payment:
+  stripe:
+    api-key: ${STRIPE_API_KEY}
+    timeout: 5000
+
+logging:
+  pattern:
+    console: "%d %-5level [%X{correlationId}] %logger - %msg%n"
